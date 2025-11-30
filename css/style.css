@@ -1,0 +1,344 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+html, body { 
+    overflow-x: hidden; 
+    font-family: 'Segoe UI', sans-serif; 
+    line-height: 1.6; 
+    min-height: 100vh;
+    scroll-behavior: smooth;
+}
+
+/* Video Background */
+#bgVideo {
+    position: fixed;
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Header & Hero Section */
+#hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 2rem 1rem;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 0;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0.5rem 0;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+}
+
+/* Hero Content */
+.hero-content h1 {
+    font-size: 4rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: 300;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Layout */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Glass Box */
+.glass-box {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.glass-box:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Sections */
+.section { 
+    margin-bottom: 4rem; 
+    padding: 2rem 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: white;
+    margin-bottom: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+/* About */
+#about .glass-box p {
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+/* Projects */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.project-content h3 {
+    color: white;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.project-content p {
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.7;
+}
+
+/* Contact Form - Smaller Size */
+.contact-form {
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+#contact .glass-box {
+    padding: 1.5rem;
+}
+
+.form-group { 
+    margin-bottom: 1.2rem; 
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+input::placeholder, textarea::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.submit-btn {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1rem 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 0.95rem;
+}
+
+.submit-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Messages */
+#form-message {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.success {
+    background: rgba(212, 237, 218, 0.2);
+    color: #d4edda;
+    border: 1px solid rgba(212, 237, 218, 0.3);
+}
+
+.error {
+    background: rgba(248, 215, 218, 0.2);
+    color: #f8d7da;
+    border: 1px solid rgba(248, 215, 218, 0.3);
+}
+
+/* Footer */
+footer {
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    text-align: center;
+    padding: 2.5rem 0;
+    margin-top: 4rem;
+    backdrop-filter: blur(10px);
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+    .navbar {
+        padding: 1.5rem 3rem;
+    }
+    
+    .nav-links {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        background: transparent;
+        width: auto;
+        gap: 2rem;
+    }
+    
+    .nav-links a {
+        padding: 0.8rem 1.5rem;
+        border-radius: 25px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 5rem;
+    }
+}
+
+/* Mobile Styles */
+@media (max-width: 767px) {
+    .hero-content h1 { 
+        font-size: 3rem; 
+    }
+    
+    .section h2 { 
+        font-size: 2.2rem; 
+    }
+    
+    .projects-grid { 
+        grid-template-columns: 1fr; 
+    }
+    
+    .glass-box { 
+        padding: 2rem; 
+    }
+    
+    #contact .glass-box {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    .section h2 { 
+        font-size: 2rem; 
+    }
+    
+    .glass-box { 
+        padding: 1.5rem; 
+    }
+    
+    #contact .glass-box {
+        padding: 1.2rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        max-width: 100%;
+    }
+}
